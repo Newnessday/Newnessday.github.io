@@ -1,0 +1,86 @@
+.movie-tab{
+    display: flex;
+    background: white;
+    border-bottom: solid #fe6e00 1px;
+}
+.movie-tab span{
+    flex: 1;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+.movie-tab .active{
+    color: #fe6e00;
+    border-color: #fe6e00;
+}
+.movie-list{
+    padding: 0 17px;
+    background: white;
+}
+.movie-list img{
+    position: absolute;
+    left: 0;
+    width: 60px;
+    height: 80px;
+}
+.movie-list li{
+    position: relative;
+    padding: 20px 0 20px 80px;
+    border-bottom: dashed 1px #c9c9c9;
+}
+.movie-list li span{
+    display: inline-block;
+    padding: 11px 0;
+}
+.movie-list li em{
+    padding-right: 5px;
+    color: red;
+}
+.movie-list li i{
+    color: #ffb375;
+}
+.movie-info{
+    padding: 10px 0 0 17px;
+}
+.movie-info h1{
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.movie-info h1:before{
+    display: inline-block;
+    position: absolute;
+    left: -17px;
+    width: 13px;
+    height: 22px;
+    background-color: RGB(228, 200, 156);
+    content: '';
+}
+.movie-info li{
+    display: flex;
+    line-height: 30px;
+}
+.movie-info li span{
+    flex: 1;
+}
+.movie-info li span:first-child{
+    width: 70px;
+    flex: initial;
+}
+.movie-info > a{
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    display: inline-block;
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    background: #fe8233;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    transform: translate(-50%, 0);
+}

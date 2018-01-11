@@ -1,0 +1,108 @@
+.area-list .area-name{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    background: #e1e1e1;
+    color: #636363;
+    cursor: pointer;
+}
+.area-list li{
+    border-bottom: 1px solid white;
+}
+.cinema-list{
+    background: white;
+}
+.cinema-list > div{
+    padding: 15px;
+    line-height: 25px;
+    border-bottom: 1px solid #e1e1e1;
+    cursor: pointer;
+}
+.cinema-list > div:hover{
+    box-shadow: 0 0 10px red;
+}
+.cinema-list span{
+    display: block;
+}
+.cinema-name{
+    font-size: 16px;
+}
+.cinema-tag{
+}
+.cinema-tag em{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0 10px;
+    color: white;
+    font-size: 12px;
+    background: #ff9658;
+    border-radius: 5px;
+    line-height: initial;
+}
+
+.cinema-detail{
+
+}
+.cinema-film-list{
+    overflow: scroll;
+    background: #38403e;
+}
+.cinema-film-list ul{
+    padding: 20px 0;
+    height: auto;
+    white-space: nowrap;
+}
+.cinema-film-list li{
+    display: inline-block;
+    margin-right: 15px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    opacity: .2;
+    transition: all .5s;
+}
+.cinema-film-list .active,.cinema-film-list li:hover{
+    opacity: 1;
+}
+.cinema-film-list img{
+    margin-bottom: 5px;
+    width: 150px;
+    border: 1px solid white;
+}
+.cinema-film-time{
+    border-bottom: 1px solid #e9681f;
+    background: white;
+}
+.cinema-film-time a{
+    display: inline-block;
+    padding: 10px 30px;
+    border-bottom: 3px solid transparent;
+}
+.cinema-film-time .active{
+    border-color: #e9681f;
+}
+.cinema-film-play{
+    background: white;
+}
+.cinema-film-play li{
+    position: relative;
+    padding: 20px;
+    border-bottom: dashed 1px rgba(85,85,85,0.3);
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.cinema-film-play strong{
+    font-size: 14px;
+    color: #000;
+}
+.cinema-film-play span{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+    align-items: center;
+    font-size: 16px;
+    color: #f67222;
+}

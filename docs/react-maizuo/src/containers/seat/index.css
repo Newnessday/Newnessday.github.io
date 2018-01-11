@@ -1,0 +1,105 @@
+.seat-cinema{
+    display: flex;
+    padding: 10px 20px;
+    line-height: 22px;
+    background: white;
+    justify-content: space-between;
+}
+.seat-cinema a{
+    display: inline-block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid rgba(0,0,0,0.26);
+    border-radius: 10px;
+    color: #36bfd1;
+    text-align: center;
+    font-size: 14px;
+}
+.seat-cinema a:hover{
+    color: red;
+}
+.seat-list{
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+}
+.seat-hall{
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    border: 1px solid rgba(0,0,0,0.26);
+    border-radius: 10px;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+}
+.seat-list > div:last-child{
+    display: flex;
+}
+.seat-line span{
+    display: block;
+    margin: 0 20px 5px 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid transparent;
+    line-height: 12px;
+    font-size: 12px;
+}
+.seat-list ul{
+    display: flex;
+}
+.seat-list li{
+    margin: 0 5px 5px 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #b4b4b4;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.seat-list .active{
+    background: #95fbb1;
+}
+.seat-checked{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    background: white;
+}
+.seat-checked-num{
+    padding: 10px 15px;
+}
+.seat-checked-num span{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 3px 10px;
+    font-size: 12px;
+    background: #36bfd1;
+    color: white;
+    border-radius: 5px;
+}
+.seat-price{
+    position: relative;
+    padding: 20px 0 20px 15px;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    color: rgba(0,0,0,0.26);
+    font-size: 12px;
+}
+.seat-price span{
+    color: #ff6640;
+    font-size: 20px;
+}
+.seat-price a{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0 30px;
+    height: 100%;
+    background: #ff6640;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}
