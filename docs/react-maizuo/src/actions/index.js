@@ -122,3 +122,16 @@ export const getCinemaFilm= cinemaId => dispatch => {
         })
 
 }
+
+// 获取座位信息
+export const GET_SEAT_LIST='GET_SEAT_LIST';
+export const getSeat= playId => dispatch => {
+    fetch(`/api/seat/${playId}`)
+        .then(data => data.json())
+        .then(json => {
+            dispatch({
+                type: GET_SEAT_LIST,
+                data: json.data.seatingChart
+            })
+        })
+}

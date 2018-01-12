@@ -7,12 +7,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+
+import {getSeat} from '../../actions';
+
 import './index.css';
 
 class seat extends React.Component {
 
     constructor(){
         super();
+    }
+
+    componentDidMount(){
+        const {dispatch}=this.props;
+        dispatch(getSeat(this.props.match.params.playId))
     }
 
     render(){

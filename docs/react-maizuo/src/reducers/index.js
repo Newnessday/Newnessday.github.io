@@ -9,11 +9,13 @@ import {combineReducers} from 'redux';
 import index from './index/index';
 import movie from './movie';
 import cinema from './cinema';
+import seat from './seat';
 
 export default combineReducers({
     index,
     movie,
-    cinema
+    cinema,
+    seat
 });
 
 

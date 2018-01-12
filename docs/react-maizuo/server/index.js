@@ -203,6 +203,22 @@ const getCinemaPlayList= async (ctx) => {
     ctx.response.body=json;
 }
 
+// 获取座位信息
+const getSeat=async (ctx) => {
+    var seatJson={};
+    const awaitFun=() => {
+        return new Promise(resolve => {
+            request(`${api}/seating-chart/${ctx.params.playId}`, (error, response, body) => {
+                seatJson=body;
+                resolve();
+            })
+        })
+    }
+    await awaitFun();
+    ctx.response.type='json';
+    ctx.response.body=seatJson;
+}
+
 router.get('/api/home', a);
 router.get('/api/home/playing', playing);
 router.get('/api/home/coming', coming);
@@ -212,6 +228,8 @@ router.get('/api/cinema/list', cinemaList);
 router.get('/api/cinema/detail/:id', cinemaDetail);
 router.get('/api/cinema/film/:id', getCinemaFilm);
 router.get('/api/cinema/filmPlay/:id', getCinemaPlayList);
+
+router.get('/api/seat/:playId', getSeat);
 
 router.get('/api/user/sendCode/:mobile', sendCode);
 router.get('/api/user/validateLogin', validetaLogin);

@@ -4,8 +4,23 @@
  * @author liugang
  * */
 
-const initialState={}
+import {
+    GET_SEAT_LIST
+} from '../actions';
+
+const initialState={};
 
 export default (state=initialState, action) => {
-    return state;
+
+    switch(action.type){
+        case GET_SEAT_LIST :
+            return {
+                a: action.data
+            }
+            break;
+        default :
+            return state;
+            break;
+    }
+
 }
