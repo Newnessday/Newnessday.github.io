@@ -24,7 +24,6 @@ class Detail extends React.Component {
     }
 
     render(){
-        console.log(this)
         var service=[];
         const {detail}=this.props;
         if(!detail.name) return false;

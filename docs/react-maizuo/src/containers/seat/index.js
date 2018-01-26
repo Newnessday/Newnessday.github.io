@@ -16,6 +16,10 @@ class seat extends React.Component {
 
     constructor(){
         super();
+        this.state={
+            checkedSeat: {},
+            seatPrice: 0
+        }
     }
 
     componentDidMount(){
@@ -23,7 +27,41 @@ class seat extends React.Component {
         dispatch(getSeat(this.props.match.params.playId))
     }
 
+    handelSeat(seatInfo){
+        let state=this.state;
+        let seatKey=`${seatInfo.row}-${seatInfo.column}`;
+        //
+        // this.setState({
+        //     seatPrice: this.state.seatPrice+1
+        // })
+        // this.setState({
+        //     seatPrice: this.state.seatPrice+1
+        // })
+
+        this.setState((state, props) => {
+            return {
+                seatPrice: state.seatPrice+1
+            }
+        })
+
+        // this.setState(Object.assign({}, this.state, {
+        //     checkedSeat: {
+        //         [seatKey]: seatInfo
+        //     }
+        // }), () => alert(1221))
+    }
+
+    componentDidUpdate(){
+        console.log(this)
+    }
+
     render(){
+        const {seat, seatRow}=this.props;
+        const {checkedSeat, seatPrice}=this.state;
+        if(!seat){
+            return (<div>座位加载中...</div>);
+        }
+
         return (
             <div>
                 <div className="seat-cinema">
@@ -39,31 +77,37 @@ class seat extends React.Component {
                     <div className="seat-hall">1号厅银幕方向</div>
                     <div>
                         <div className="seat-line">
-                            <span>1</span>
-                            <span>1</span>
-                            <span>1</span>
+                            {
+                                seatRow.map((row, index) => <span key={index}>{row}</span>)
+                            }
                         </div>
                         <div>
-                            <ul>
-                                <li></li>
-                            </ul>
-                            <ul>
-                                <li></li>
-                            </ul>
-                            <ul>
-                                <li></li>
-                            </ul>
+                            {
+                                seat.seats.map(seatRow => (
+                                    <ul>
+                                        {
+                                            seatRow.map(seatColumn => (
+                                                <li className={
+                                                    checkedSeat[`${seatColumn.row}-${seatColumn.column}`] ? 'active' : ''
+                                                } onClick={() => {
+                                                    this.handelSeat(seatColumn);
+                                                }} key={`${seatColumn.row}-${seatColumn.column}`}></li>
+                                            ))
+                                        }
+                                    </ul>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
-                <div className="seat-checked">
+                <div className="seat-checked" style={{display: Object.keys(checkedSeat).length ? 'block' : 'none'}}>
                     <div className="seat-checked-num">
-                        <span>1排1座</span>
-                        <span>1排1座</span>
-                        <span>1排1座</span>
+                        {
+                            Object.values(checkedSeat).map(item => (<span>{item.row}排{item.column}座</span>))
+                        }
                     </div>
                     <div className="seat-price">
-                        <span>￥45</span>&nbsp;(45*2)
+                        <span>￥{seatPrice*Object.keys(checkedSeat).length}</span>&nbsp;({seatPrice}*{Object.keys(checkedSeat).length})
                         <a>确认</a>
                     </div>
                 </div>
@@ -74,7 +118,11 @@ class seat extends React.Component {
 }
 
 const mapStateToProps= state => {
-    return {}
+
+    return {
+        seat: state.seat.data,
+        seatRow: state.seat.seatRow
+    }
 }
 
 export default connect(mapStateToProps)(seat);
