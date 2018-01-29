@@ -32,11 +32,30 @@ class seat extends React.Component {
     handelSeat(seatInfo){
         let state=this.state;
         let seatKey=`${seatInfo.row}-${seatInfo.column}`;
-        let beforeCheckedSeat=this.state.checkedSeat;
+        let {checkedSeat}=state;
 
-        this.setState(Object.assign({}, this.state, {
-            checkedSeat: [...beforeCheckedSeat, seatKey]
-        }))
+        if(state.checkedSeat[seatKey]){
+            delete state.checkedSeat[seatKey];
+            this.setState({
+                checkedSeat: {
+                    ...state.checkedSeat
+                }
+            })
+        }else{
+            // 最多购买六张座位
+            if(Object.keys(checkedSeat).length==6){
+                alert('最多购买六张票！');
+                return false;
+            }
+            this.setState({
+                checkedSeat: {
+                    ...state.checkedSeat,
+                    [seatKey]: seatInfo
+                },
+                seatPrice: this.props.cinemaInfo.price.maizuo
+            })
+        }
+
     }
 
     render(){
@@ -72,7 +91,7 @@ class seat extends React.Component {
                                         {
                                             seatRow.map(seatColumn => (
                                                 <li className={
-                                                    checkedSeat.indexOf(`${seatColumn.row}-${seatColumn.column}`)>=0 ? 'active' : ''
+                                                    checkedSeat[`${seatColumn.row}-${seatColumn.column}`] ? 'active' : ''
                                                 } onClick={() => {
                                                     this.handelSeat(seatColumn);
                                                 }} key={`${seatColumn.row}-${seatColumn.column}`}></li>
