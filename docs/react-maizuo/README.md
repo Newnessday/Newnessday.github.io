@@ -9,11 +9,14 @@
 >
 >
 > 服务端
->> koa2、koa2-router
+>> koa2、koa2-router、pm2
 >
 >
 # 运行方式
 ## 本地起server
 > 1. 在 **src** 同级目录执行npm install
+> 2. 进入 **server** 目录执行npm install
+> 3. 全局安装pm2，执行npm install pm2 -g
+> 4. 以上安装完之后，返回到 **src** 同级目录，执行npm start，会自动打开你的默认浏览器，并显示项目首页
 >
 > 2：设置chrome的Allow-control-Allow-origin
