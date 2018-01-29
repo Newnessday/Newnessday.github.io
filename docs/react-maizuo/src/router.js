@@ -23,7 +23,7 @@ import MovieDetail from './containers/movie/detail';
 import Cinema from './containers/cinema';
 import CinemaDetail from './containers/cinema/detail';
 import cinemaFilm from './containers/cinema/film';
-import User from './components/User';
+import User from './components/user';
 import seat from './containers/seat';
 
 const store=createStore(

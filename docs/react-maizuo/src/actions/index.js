@@ -147,3 +147,6 @@ export const getPlayCinemaInfo= playId => dispatch => {
             })
         })
 }
+
+// 存储用户信息
+export const STORAEG_USER_INFO='STORAEG_USER_INFO';

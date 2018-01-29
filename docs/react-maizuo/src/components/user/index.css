@@ -1,0 +1,33 @@
+.user{
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+}
+.user input{
+    padding: 0 10px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+}
+.user button{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: -21px;
+    padding: 7px 0;
+    width: 100px;
+    color: white;
+    background: #29a097;
+    border: 0;
+}
+.user .submit{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    background: #fe8233;
+    text-align: center;
+}
