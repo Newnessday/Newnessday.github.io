@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start server/index.js --watch && webpack-dev-server --open --hot"
+    "start": "pm2 start server/index.js --watch && webpack-dev-server --open --hot",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
