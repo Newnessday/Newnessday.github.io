@@ -10,3 +10,8 @@
 >
 > 服务端
 >> koa2、koa2-router
+>
+>
+# 运行方式
+> 1：本地server
+> 2：设置chrome的Allow-control-Allow-origin
