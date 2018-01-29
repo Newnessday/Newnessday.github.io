@@ -13,7 +13,7 @@
 >
 >
 # 运行方式
-##：本地server
+## 本地server
 > 1. 执行npm install
 >
 > 2：设置chrome的Allow-control-Allow-origin
