@@ -22,7 +22,9 @@ class film extends React.Component {
     }
 
     componentDidMount(){
-        this.props.dispatch(getCinemaFilm(this.props.match.params.id));
+        console.log(this)
+        this.props.firstLoadData(this.props.match);
+
     }
 
     // 切换影片
@@ -45,7 +47,7 @@ class film extends React.Component {
     }
 
     render(){
-        var {filmList, playList}=this.props;
+        var {filmList, playList, cacheCinameInfo}=this.props;
         var state=this.state;
 
         if(!state.showMovieId && filmList.length){
@@ -91,6 +93,7 @@ class film extends React.Component {
                             var stopDate = new Date(item.stopSellingAt);
                             return (
                                 <li key={item.id} onClick={() => {
+                                    cacheCinameInfo();
                                     location.hash=`/seat/${item.id}`;
                                 }}>
                                     <strong>{startDate.getHours()}:{startDate.getMinutes()}</strong><br/>
@@ -115,4 +118,16 @@ const mapStateToProps= state => {
     }
 }
 
-export default connect(mapStateToProps)(film);
+const mapDispatchToProps= dispatch => {
+    return {
+        firstLoadData: match => {
+            dispatch(getCinemaFilm(match.params.id));
+        },
+        cacheCinameInfo: () => {
+            console.log(this)
+            alert(99999)
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(film);

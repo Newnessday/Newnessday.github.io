@@ -8,7 +8,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 
-import {getSeat} from '../../actions';
+import {getSeat, getPlayCinemaInfo} from '../../actions';
 
 import './index.css';
 
@@ -24,39 +24,23 @@ class seat extends React.Component {
 
     componentDidMount(){
         const {dispatch}=this.props;
-        dispatch(getSeat(this.props.match.params.playId))
+        const playId=this.props.match.params.playId;
+        dispatch(getSeat(playId));
+        dispatch(getPlayCinemaInfo(playId));
     }
 
     handelSeat(seatInfo){
         let state=this.state;
         let seatKey=`${seatInfo.row}-${seatInfo.column}`;
-        //
-        // this.setState({
-        //     seatPrice: this.state.seatPrice+1
-        // })
-        // this.setState({
-        //     seatPrice: this.state.seatPrice+1
-        // })
+        let beforeCheckedSeat=this.state.checkedSeat;
 
-        this.setState((state, props) => {
-            return {
-                seatPrice: state.seatPrice+1
-            }
-        })
-
-        // this.setState(Object.assign({}, this.state, {
-        //     checkedSeat: {
-        //         [seatKey]: seatInfo
-        //     }
-        // }), () => alert(1221))
-    }
-
-    componentDidUpdate(){
-        console.log(this)
+        this.setState(Object.assign({}, this.state, {
+            checkedSeat: [...beforeCheckedSeat, seatKey]
+        }))
     }
 
     render(){
-        const {seat, seatRow}=this.props;
+        const {seat, seatRow, cinemaInfo}=this.props;
         const {checkedSeat, seatPrice}=this.state;
         if(!seat){
             return (<div>座位加载中...</div>);
@@ -66,15 +50,15 @@ class seat extends React.Component {
             <div>
                 <div className="seat-cinema">
                     <div>
-                        <h1>影城名称</h1>
-                        <span>2018-01-09 17:57:19</span>
+                        <h1>{cinemaInfo.cinema.name}</h1>
+                        <span>{new Date(cinemaInfo.showAt).toString()}</span>
                     </div>
                     <div>
                         <a>换一场</a>
                     </div>
                 </div>
                 <div className="seat-list">
-                    <div className="seat-hall">1号厅银幕方向</div>
+                    <div className="seat-hall">{cinemaInfo.hall.name}银幕方向</div>
                     <div>
                         <div className="seat-line">
                             {
@@ -88,7 +72,7 @@ class seat extends React.Component {
                                         {
                                             seatRow.map(seatColumn => (
                                                 <li className={
-                                                    checkedSeat[`${seatColumn.row}-${seatColumn.column}`] ? 'active' : ''
+                                                    checkedSeat.indexOf(`${seatColumn.row}-${seatColumn.column}`)>=0 ? 'active' : ''
                                                 } onClick={() => {
                                                     this.handelSeat(seatColumn);
                                                 }} key={`${seatColumn.row}-${seatColumn.column}`}></li>
@@ -118,10 +102,10 @@ class seat extends React.Component {
 }
 
 const mapStateToProps= state => {
-
     return {
         seat: state.seat.data,
-        seatRow: state.seat.seatRow
+        seatRow: state.seat.seatRow,
+        cinemaInfo: state.seat.cinemaInfo
     }
 }
 

@@ -135,3 +135,15 @@ export const getSeat= playId => dispatch => {
             })
         })
 }
+// 根据场次id获取影院信息
+export const GET_PLAY_CINEMA_INFO='GET_PLAY_CINEMA_INFO';
+export const getPlayCinemaInfo= playId => dispatch => {
+    fetch(`/api/seat/cinema/${playId}`)
+        .then(data => data.json())
+        .then(json => {
+            dispatch({
+                type: GET_PLAY_CINEMA_INFO,
+                data: json.data.schedule
+            })
+        })
+}

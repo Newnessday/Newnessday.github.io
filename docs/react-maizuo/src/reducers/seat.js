@@ -5,7 +5,8 @@
  * */
 
 import {
-    GET_SEAT_LIST
+    GET_SEAT_LIST,
+    GET_PLAY_CINEMA_INFO
 } from '../actions';
 
 const initialState={};
@@ -13,6 +14,12 @@ const initialState={};
 export default (state=initialState, action) => {
 
     switch(action.type){
+
+        case GET_PLAY_CINEMA_INFO :
+            return Object.assign({}, state, {
+                cinemaInfo: action.data
+            });
+            break;
         case GET_SEAT_LIST :
 
             // 格式化数据
@@ -35,11 +42,10 @@ export default (state=initialState, action) => {
 
             action.data.seats=seats;
             seatRow.pop();
-
-            return {
+            return Object.assign({}, state, {
                 data: action.data,
                 seatRow
-            }
+            })
             break;
         default :
             return state;
