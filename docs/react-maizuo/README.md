@@ -13,7 +13,7 @@
 >
 >
 # 运行方式
-## 本地server
-> 1. 执行npm install
+## 本地起server
+> 1. 在<font color=red>src</font>同级目录执行npm install
 >
 > 2：设置chrome的Allow-control-Allow-origin
