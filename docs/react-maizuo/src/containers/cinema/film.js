@@ -124,8 +124,6 @@ const mapDispatchToProps= dispatch => {
             dispatch(getCinemaFilm(match.params.id));
         },
         cacheCinameInfo: () => {
-            console.log(this)
-            alert(99999)
         }
     }
 }
