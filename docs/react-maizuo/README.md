@@ -30,4 +30,4 @@
 # 页面展示
 > ps：部分UI细节未做处理，目前最深只做到选座页面。
 >
-> ![alt text](/path/to/img.jpg "Title")
+> ![image](/demoImg/1.jpg)
