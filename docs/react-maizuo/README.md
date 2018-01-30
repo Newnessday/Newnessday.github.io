@@ -30,4 +30,4 @@
 # 页面展示
 > ps：部分UI细节未做处理，目前最深只做到选座页面。
 >
-> ![image](/demoImg/1.jpg?raw=true)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/1.jpg)
