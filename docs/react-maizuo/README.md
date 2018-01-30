@@ -1,7 +1,10 @@
 # 项目声明
 该项目所用到的 **API** 均来自卖座电影 ，只是为了得到数据进行项目练习，并没有进入到真实订单页面，完全出于学习用途，并无恶意，望卖座官方海涵。
 ###### 本项目的目的是为帮助第一次使用react开发，不知如何下手的童鞋所打造，如果感觉有帮助，请右上角start一下。不足指出有很多，欢迎Issues指出！
-
+>
+>
+# 仓库地址
+> [Newnessday](https://github.com/Newnessday/Newnessday.github.io/tree/master/docs/react-maizuo)
 >
 >
 >
