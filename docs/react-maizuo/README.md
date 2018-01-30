@@ -31,3 +31,11 @@
 > ps：部分UI细节未做处理，目前最深只做到选座页面。
 >
 > ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/1.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/2.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/3.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/4.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/5.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/6.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/7.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/8.jpg)
+> ![image](https://github.com/Newnessday/Newnessday.github.io/blob/master/docs/react-maizuo/demoImg/9.jpg)
